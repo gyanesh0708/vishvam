@@ -12,14 +12,14 @@
 body{
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 margin:0;
-background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+background: linear-gradient(135deg, #FFF9E6 0%, #FFFBF0 100%);
 scroll-behavior:smooth;
 color:#333;
 }
 
 header{
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-color:white;
+background: linear-gradient(135deg, #FFD600 0%, #FFC200 100%);
+color:#004B87;
 text-align:center;
 padding:50px 20px;
 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -28,7 +28,8 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 header h1{
 margin:0;
 font-size:2.5em;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+font-weight:900;
 }
 
 header p{
@@ -37,7 +38,7 @@ margin:10px 0 0 0;
 }
 
 nav{
-background:#333;
+background:#004B87;
 text-align:center;
 padding:15px;
 position:sticky;
@@ -55,7 +56,7 @@ transition: color 0.3s ease;
 }
 
 nav a:hover{
-color:#ffd700;
+color:#FFD600;
 }
 
 section{
@@ -89,16 +90,25 @@ content:'';
 display:block;
 width:50px;
 height:3px;
-background:#667eea;
+background:#004B87;
 margin:10px auto;
 }
 
-.hero img{
-width: 50%;
+.hero{
+width:100%;
+padding:0;
 max-width:100%;
-border-radius:15px;
-box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-transition: transform 0.3s ease;
+max-height:300px;
+overflow:hidden;
+}
+
+.hero img{
+width:100%;
+height:300px;
+display:block;
+border-radius:0;
+box-shadow:none;
+object-fit:cover;
 }
 
 .hero img:hover{
@@ -129,7 +139,7 @@ box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 
 .card h3{
 margin:0 0 10px 0;
-color:#667eea;
+color:#004B87;
 }
 
 .gallery{
@@ -149,6 +159,91 @@ transition: transform 0.3s ease;
 
 .gallery img:hover{
 transform: scale(1.05);
+}
+
+.testimonials-container{
+position:relative;
+margin:30px auto;
+max-width:1200px;
+}
+
+.scroll-button{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:#004B87;
+color:white;
+border:none;
+width:50px;
+height:50px;
+border-radius:50%;
+font-size:24px;
+cursor:pointer;
+z-index:10;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+transition:background 0.3s ease;
+}
+
+.scroll-button:hover{
+background:#FFD600;
+color:#004B87;
+}
+
+.scroll-left{
+left:-70px;
+}
+
+.scroll-right{
+right:-70px;
+}
+
+.testimonials{
+display:flex;
+gap:30px;
+flex-wrap:nowrap;
+overflow-x:auto;
+overflow-y:hidden;
+padding:20px 0;
+scroll-behavior:smooth;
+}
+
+.testimonial{
+background:linear-gradient(135deg, #FFD600 0%, #FFC200 100%);
+padding:30px;
+border-radius:15px;
+width:300px;
+min-width:300px;
+flex-shrink:0;
+text-align:center;
+box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border-left: 5px solid #004B87;
+}
+
+.testimonial:hover{
+transform: translateY(-10px);
+box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.testimonial p{
+color:#333;
+font-size:0.95em;
+line-height:1.6;
+margin:10px 0;
+}
+
+.testimonial .rating{
+color:#004B87;
+font-size:1.3em;
+margin:10px 0;
+letter-spacing:2px;
+}
+
+.testimonial .name{
+font-weight:bold;
+color:#004B87;
+font-size:1.1em;
+margin-top:15px;
 }
 
 .shorts{
@@ -182,7 +277,7 @@ margin-top:20px;
 }
 
 footer{
-background:#333;
+background:#004B87;
 color:white;
 text-align:center;
 padding:30px;
@@ -206,6 +301,156 @@ transition: transform 0.3s ease;
 transform: scale(1.1);
 }
 
+.quiz-container{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+max-width:800px;
+margin:0 auto;
+}
+
+.quiz-question{
+margin:20px 0;
+padding:15px;
+background:#f9f9f9;
+border-left:4px solid #004B87;
+border-radius:5px;
+}
+
+.quiz-question label{
+display:block;
+margin:10px 0;
+cursor:pointer;
+}
+
+.quiz-question input[type="radio"]{
+margin-right:10px;
+cursor:pointer;
+}
+
+.quiz-button{
+background:linear-gradient(135deg, #004B87 0%, #003d6b 100%);
+color:white;
+border:none;
+padding:15px 40px;
+border-radius:8px;
+font-size:1.1em;
+cursor:pointer;
+margin-top:30px;
+width:100%;
+transition:background 0.3s ease;
+}
+
+.quiz-button:hover{
+background:linear-gradient(135deg, #FFD600 0%, #FFC200 100%);
+color:#004B87;
+}
+
+.result-container{
+background:linear-gradient(135deg, #FFD600 0%, #FFC200 100%);
+padding:30px;
+border-radius:15px;
+text-align:center;
+margin-top:30px;
+}
+
+.result-score{
+font-size:3em;
+font-weight:bold;
+color:#004B87;
+margin:20px 0;
+}
+
+.result-text{
+font-size:1.3em;
+color:#333;
+margin:10px 0;
+}
+
+.result-button{
+background:#004B87;
+color:white;
+border:none;
+padding:12px 30px;
+border-radius:8px;
+font-size:1em;
+cursor:pointer;
+margin-top:20px;
+transition:background 0.3s ease;
+}
+
+.result-button:hover{
+background:#FFD600;
+color:#004B87;
+}
+
+.quiz-progress{
+text-align:center;
+margin-bottom:30px;
+font-size:1.1em;
+color:#004B87;
+font-weight:bold;
+}
+
+@media (max-width: 768px) {
+nav {
+padding: 10px 5px;
+}
+
+nav a {
+margin: 5px 10px;
+font-size: 0.9em;
+}
+
+header h1 {
+font-size: 1.8em;
+}
+
+section {
+padding: 40px 15px;
+}
+
+h2 {
+font-size: 1.5em;
+}
+}
+
+@media (max-width: 480px) {
+nav a {
+margin: 5px 8px;
+font-size: 0.8em;
+}
+
+header {
+padding: 30px 15px;
+}
+
+header h1 {
+font-size: 1.5em;
+}
+
+header p {
+font-size: 1em;
+}
+
+section {
+padding: 30px 10px;
+}
+
+h2 {
+font-size: 1.3em;
+}
+
+.card {
+width: 100%;
+}
+
+.gallery img {
+width: 100%;
+}
+}
+
 </style>
 
 </head>
@@ -222,13 +467,18 @@ transform: scale(1.1);
 
 <nav>
 
-<a href="#about">About</a> <a href="#team">Management</a> <a href="#why">Why Vishvam</a> <a href="#gallery">Centre</a> <a href="#shorts">Shorts</a> <a href="#contact">Contact</a>
+<a href="#about">About</a> <a href="#team">Management</a> <a href="#why">Why Vishvam</a> <a
+    href="#testimonials">Testimonials</a> <a href="#gallery">Centre</a> <a href="#quiz">Quiz</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
 <section class="hero">
 
-<img src="banner.jpg">
+<!-- <img src="banner.jpg"> -->
+<img src="image.png">
+<!-- <img src="vishvam_banner_1200x675.jpg"> -->
+
 
 </section>
 
@@ -281,6 +531,156 @@ and small batch size to ensure personal attention to every student.
 
 </section>
 
+<section id="testimonials">
+
+    <h2>Student & Parent Testimonials</h2>
+
+    <div class="testimonials-container">
+        <button class="scroll-button scroll-left" onclick="scrollTestimonials('left')">❮</button>
+        <div class="testimonials" id="testimonials-scroll">
+
+            <div class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"My son's grades improved significantly after joining Vishvam. The teachers are very attentive and
+                    the
+                    small batch size makes a huge difference."</p>
+                <div class="name">- Priya Sharma (Parent)</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"The conceptual teaching approach helped me understand complex topics easily. Highly recommend for
+                    anyone
+                    serious about their studies."</p>
+                <div class="name">- Arjun Verma (8th Std)</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"Weekly tests and performance analysis kept me on track. The management is very supportive and caring
+                    towards every student."</p>
+                <div class="name">- Anjali Reddy (9th Std)</div>
+            </div>
+            <div class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"My son's grades improved significantly after joining Vishvam. The teachers are very attentive and
+                    the
+                    small batch size makes a huge difference."</p>
+                <div class="name">- Priya Sharma (Parent)</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"The conceptual teaching approach helped me understand complex topics easily. Highly recommend for
+                    anyone
+                    serious about their studies."</p>
+                <div class="name">- Arjun Verma (8th Std)</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"Weekly tests and performance analysis kept me on track. The management is very supportive and caring
+                    towards every student."</p>
+                <div class="name">- Anjali Reddy (9th Std)</div>
+            </div>
+
+        </div>
+        <button class="scroll-button scroll-right" onclick="scrollTestimonials('right')">❯</button>
+    </div>
+
+</section>
+
+<script>
+    function scrollTestimonials(direction) {
+        const container = document.getElementById('testimonials-scroll');
+        const scrollAmount = 320;
+        if (direction === 'left') {
+            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }
+
+    // Quiz functionality
+    const allQuestions = [
+        { q: "What is 5 + 3?", options: ["7", "8", "9", "10"], correct: 1 },
+        { q: "What is the capital of India?", options: ["Mumbai", "Delhi", "Bangalore", "Pune"], correct: 1 },
+        { q: "Which planet is closest to the Sun?", options: ["Venus", "Mercury", "Earth", "Mars"], correct: 1 },
+        { q: "What is 12 × 8?", options: ["92", "94", "96", "98"], correct: 2 },
+        { q: "Who wrote Romeo and Juliet?", options: ["Jane Austen", "William Shakespeare", "Charles Dickens", "Oscar Wilde"], correct: 1 },
+        { q: "What is the smallest unit of life?", options: ["Atom", "Molecule", "Cell", "Organ"], correct: 2 },
+        { q: "What is 100 ÷ 5?", options: ["15", "20", "25", "30"], correct: 1 },
+        { q: "Which is the largest Ocean?", options: ["Atlantic", "Indian", "Pacific", "Arctic"], correct: 2 },
+        { q: "What is H2O?", options: ["Oxygen", "Water", "Hydrogen", "Salt"], correct: 1 },
+        { q: "What is the square root of 144?", options: ["10", "11", "12", "13"], correct: 2 },
+        { q: "Which animal is the fastest?", options: ["Lion", "Cheetah", "Gazelle", "Eagle"], correct: 1 },
+        { q: "What is 25 - 15?", options: ["8", "9", "10", "11"], correct: 2 },
+        { q: "Who is known as the Father of Science?", options: ["Albert Einstein", "Isaac Newton", "Galileo", "Stephen Hawking"], correct: 2 },
+        { q: "What is the chemical symbol for Gold?", options: ["Go", "Au", "Gd", "Ag"], correct: 1 },
+        { q: "Which country has the most population?", options: ["India", "China", "USA", "Indonesia"], correct: 0 },
+        { q: "What is 7 × 9?", options: ["61", "62", "63", "64"], correct: 2 },
+        { q: "What is the largest continent?", options: ["Africa", "Europe", "Asia", "America"], correct: 2 },
+        { q: "How many seconds in a minute?", options: ["50", "60", "70", "80"], correct: 1 },
+        { q: "Which is a prime number?", options: ["4", "6", "7", "8"], correct: 2 },
+        { q: "What is 50 + 50?", options: ["90", "95", "100", "105"], correct: 2 }
+    ];
+
+    let selectedQuestions = [];
+    let userAnswers = {};
+
+    function initQuiz() {
+        // Shuffle and select 5 questions
+        let shuffled = allQuestions.sort(() => Math.random() - 0.5);
+        selectedQuestions = shuffled.slice(0, 5);
+
+        // Display questions
+        const quizDiv = document.getElementById('quiz-questions');
+        quizDiv.innerHTML = '';
+
+        selectedQuestions.forEach((q, index) => {
+            let qDiv = document.createElement('div');
+            qDiv.className = 'quiz-question';
+            qDiv.innerHTML = `<strong>${index + 1}. ${q.q}</strong><br>`;
+
+            q.options.forEach((option, optIndex) => {
+                qDiv.innerHTML += `
+        <label>
+          <input type="radio" name="q${index}" value="${optIndex}">
+          ${option}
+        </label>
+      `;
+            });
+
+            quizDiv.appendChild(qDiv);
+        });
+
+        // Attach event listener after form is loaded
+        const quizForm = document.getElementById('quiz-form');
+        if (quizForm) {
+            quizForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                let correct = 0;
+                selectedQuestions.forEach((q, index) => {
+                    let selected = document.querySelector(`input[name="q${index}"]:checked`);
+                    if (selected && parseInt(selected.value) === q.correct) {
+                        correct++;
+                    }
+                });
+
+                // Show result
+                document.getElementById('quiz-form').style.display = 'none';
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('correct').textContent = correct;
+                document.getElementById('score').textContent = Math.round((correct / 5) * 100);
+            });
+        }
+    }
+
+    // Initialize quiz on page load
+    window.addEventListener('load', initQuiz);
+</script>
+
 <section id="gallery">
 
 <h2>Our Vishvam Centre</h2>
@@ -308,6 +708,28 @@ and small batch size to ensure personal attention to every student.
 <iframe width="315" height="560" src="https://www.youtube.com/embed/Ub_EVksPfDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </div>
+
+</section>
+
+<section id="quiz">
+
+    <h2>Test Your Knowledge - Quiz</h2>
+
+    <div class="quiz-container">
+        <div class="quiz-progress">Question <span id="current-q">1</span> of 5</div>
+        <form id="quiz-form">
+            <div id="quiz-questions"></div>
+            <button type="submit" class="quiz-button">Submit Quiz</button>
+        </form>
+        <div id="result" style="display:none;">
+            <div class="result-container">
+                <div>Quiz Completed!</div>
+                <div class="result-score"><span id="score">0</span>%</div>
+                <div class="result-text">You scored <span id="correct">0</span> out of 5 correct</div>
+                <button class="result-button" onclick="location.reload()">Try Again</button>
+            </div>
+        </div>
+    </div>
 
 </section>
 
