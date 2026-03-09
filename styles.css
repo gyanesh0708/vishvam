@@ -436,7 +436,7 @@ h2::after {
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     margin: 50px auto;
-    padding: 60px 40px;
+    padding: 15px 40px;
     max-width: 1200px;
 }
 
@@ -464,15 +464,16 @@ h2::after {
     gap: 20px;
     justify-content: space-between;
     margin-top: 30px;
+    overflow: scroll;
 }
 
 .info-item {
     display: flex;
-    gap: 15px;
+    gap: 8px;
     margin-bottom: 20px;
-    align-items: flex-start;
+    align-items: anchor-center;
     flex: 1;
-    min-width: 250px;
+    min-width: 290px;
 }
 
 .info-item .icon {
@@ -791,6 +792,10 @@ h2::after {
 }
 
 @media (max-width: 480px) {
+    .scroll-button {
+        display: none;
+    }
+
     .logo a {
         font-size: 1.5em;
     }
