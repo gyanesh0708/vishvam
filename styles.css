@@ -420,6 +420,30 @@ font-family:'Poppins', sans-serif;
 letter-spacing:0.5px;
 }
 
+.why-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.why-content p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.why-content p:hover {
+    transform: translateX(5px);
+}
+
+.why-content strong {
+    color: #004B87;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
 @media (max-width: 768px) {
 nav {
 padding: 10px 5px;
