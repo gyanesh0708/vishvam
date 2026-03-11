@@ -42,6 +42,8 @@
 
     <header class="main-header">
         <div class="header-container">
+            <img src="logo.jpeg" alt="Vishvam Coaching Institute Logo" class="header-logo"
+                style="height: 160px; width: auto; margin-bottom: 10px;">
             <h1>Vishvam Coaching Institute</h1>
             <p class="tagline">Empowering Minds, Shaping Futures</p>
             <div class="header-badges">
@@ -53,8 +55,8 @@
                 <a href="#contact" class="btn btn-primary">Enroll Now</a>
                 <a href="#about" class="btn btn-secondary">Learn More</a>
             </div>
-            </div>
-            </header>
+        </div>
+        </header>
 
     <section id="about" class="split-section">
         <div class="split-content left-content">
@@ -71,9 +73,9 @@
                 <a href="#why" class="btn btn-primary">Why Choose Us</a>
                 <a href="#contact" class="btn btn-outline">Contact Us</a>
             </div>
-            </div>
-            <div class="split-image right-image">
-                <img src="image.png" alt="Vishvam Coaching Students/Faculty">
+        </div>
+        <div class="split-image right-image">
+            <img src="banner1.jpeg" alt="Vishvam Coaching Students/Faculty">
             </div>
             </section>
 
@@ -130,7 +132,7 @@
             <p><strong>Supportive Environment:</strong> Our management and faculty are dedicated to creating a
                 nurturing,
                 positive learning environment where students feel confident and motivated to excel.</p>
-            </div>
+        </div>
 
     </section>
 
@@ -149,7 +151,7 @@
                         the
                         small batch size makes a huge difference."</p>
                     <div class="name">- Priya Sharma (Parent)</div>
-                    </div>
+                </div>
 
                 <div class="testimonial">
                     <div class="rating">★★★★★</div>
@@ -158,7 +160,7 @@
                         anyone
                         serious about their studies."</p>
                     <div class="name">- Arjun Verma (8th Std)</div>
-                    </div>
+                </div>
 
                 <div class="testimonial">
                     <div class="rating">★★★★★</div>
@@ -166,15 +168,15 @@
                         caring
                         towards every student."</p>
                     <div class="name">- Anjali Reddy (9th Std)</div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="rating">★★★★★</div>
+                </div>
+                <div class="testimonial">
+                    <div class="rating">★★★★★</div>
                     <p>"My son's grades improved significantly after joining Vishvam. The teachers are very attentive
                         and
                         the
                         small batch size makes a huge difference."</p>
                     <div class="name">- Priya Sharma (Parent)</div>
-                    </div>
+                </div>
 
                 <div class="testimonial">
                     <div class="rating">★★★★★</div>
@@ -183,7 +185,7 @@
                         anyone
                         serious about their studies."</p>
                     <div class="name">- Arjun Verma (8th Std)</div>
-                    </div>
+                </div>
 
                 <div class="testimonial">
                     <div class="rating">★★★★★</div>
@@ -191,11 +193,11 @@
                         caring
                         towards every student."</p>
                     <div class="name">- Anjali Reddy (9th Std)</div>
-                    </div>
+                </div>
 
             </div>
             <button class="scroll-button scroll-right" onclick="scrollTestimonials('right')">❯</button>
-            </div>
+        </div>
 
     </section>
 
@@ -210,35 +212,33 @@
             }
         }
 
-                // Quiz functionality
-                let allQuestions = [];
-                let selectedQuestions = [];
-                let userAnswers = {};
+        // Quiz functionality
+        let allQuestions = [];
+        let selectedQuestions = [];
+        let userAnswers = {};
 
-                // Load questions from JSON file
-                async function loadQuestions() {
-                    try {
-                        const response = await fetch('questions.json');
-                        allQuestions = await response.json();
-                        initQuiz();
-                    } catch (error) {
-                        console.error('Error loading questions:', error);
-                    }
-                }
+        async function loadQuestions() {
+            try {
+                const response = await fetch('questions.json');
+                allQuestions = await response.json();
+                initQuiz();
+            } catch (error) {
+                console.error('Error loading questions:', error);
+            }
+        }
 
-                function initQuiz() {
-                    // Shuffle and select 5 questions
-                    let shuffled = allQuestions.sort(() => Math.random() - 0.5);
-                    selectedQuestions = shuffled.slice(0, 5);
+        function initQuiz() {
+            // Shuffle and select 5 questions
+            selectedQuestions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
 
-                // Display questions
-                const quizDiv = document.getElementById('quiz-questions');
-                quizDiv.innerHTML = '';
+            // Display questions
+            const quizDiv = document.getElementById('quiz-questions');
+            quizDiv.innerHTML = '';
 
-                selectedQuestions.forEach((q, index) => {
-                    let qDiv = document.createElement('div');
-                    qDiv.className = 'quiz-question';
-                    qDiv.innerHTML = `<strong>${index + 1}. ${q.q}</strong><br>`;
+            selectedQuestions.forEach((q, index) => {
+                let qDiv = document.createElement('div');
+                qDiv.className = 'quiz-question';
+                qDiv.innerHTML = `<strong>${index + 1}. ${q.q}</strong><br>`;
 
                 q.options.forEach((option, optIndex) => {
                     qDiv.innerHTML += `
@@ -252,11 +252,11 @@
                 quizDiv.appendChild(qDiv);
             });
 
-                // Attach event listener after form is loaded
-                const quizForm = document.getElementById('quiz-form');
-                if (quizForm) {
-                    quizForm.addEventListener('submit', function (e) {
-                        e.preventDefault();
+            // Attach event listener after form is loaded
+            const quizForm = document.getElementById('quiz-form');
+            if (quizForm) {
+                quizForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
                     let correct = 0;
                     selectedQuestions.forEach((q, index) => {
@@ -272,64 +272,73 @@
                     document.getElementById('correct').textContent = correct;
                     document.getElementById('score').textContent = Math.round((correct / 5) * 100);
                 });
-                }
             }
+        }
 
-                // Load questions on page load
-                window.addEventListener('load', loadQuestions);
-            </script>
+        // Load questions on page load
+        window.addEventListener('load', loadQuestions);
+        </script>
 
     <section id="gallery">
 
-        <h2>🏫 Explore Our Vishvam Centre</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">Experience our state-of-the-art facilities designed for
+        <h2> Explore Our Vishvam Centre</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">Experience our state-of-the-art facilities
+            designed for
             modern learning</p>
 
         <div class="gallery">
 
             <figure class="gallery-item">
                 <img src="centre1.jpeg" alt="Vishvam Centre Classroom">
-                <figcaption>Modern Classrooms</figcaption>
+                <!-- <figcaption>Modern Classrooms</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre2.jpeg" alt="Vishvam Centre Study Area">
-                <figcaption>Study Facilities</figcaption>
+                <!-- <figcaption>Study Facilities</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre3.jpeg" alt="Vishvam Centre Lab">
-                <figcaption>Science Lab</figcaption>
+                <!-- <figcaption>Science Lab</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre4.jpeg" alt="Vishvam Centre Library">
-                <figcaption>Learning Library</figcaption>
+                <!-- <figcaption>Learning Library</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre5.jpeg" alt="Vishvam Centre Recreation">
-                <figcaption>Recreation Zone</figcaption>
+                <!-- <figcaption>Recreation Zone</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre6.jpeg" alt="Vishvam Centre Entrance">
-                <figcaption>Centre Entrance</figcaption>
+                <!-- <figcaption>Centre Entrance</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre7.jpeg" alt="Vishvam Centre Students">
-                <figcaption>Student Engagement</figcaption>
+                <!-- <figcaption>Student Engagement</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre8.jpeg" alt="Vishvam Centre Activity">
-                <figcaption>Interactive Learning</figcaption>
+                <!-- <figcaption>Interactive Learning</figcaption> -->
             </figure>
-            
+
             <figure class="gallery-item">
                 <img src="centre9.jpeg" alt="Vishvam Centre Event">
-                <figcaption>Events & Activities</figcaption>
+                <!-- <figcaption>Events & Activities</figcaption> -->
+                </figure>
+                <figure class="gallery-item">
+                    <img src="centre10.jpeg" alt="Vishvam Centre Event">
+                    <!-- <figcaption>Events & Activities</figcaption> -->
+                </figure>
+                <figure class="gallery-item">
+                    <img src="centre11.jpeg" alt="Vishvam Centre Event">
+                    <!-- <figcaption>Events & Activities</figcaption> -->
             </figure>
 
 
@@ -343,12 +352,12 @@
 
         <div class="shorts">
 
-            <iframe width="315" height="560" src="https://www.youtube.com/embed/1Idn_gAAuqk" title="YouTube video player"
+            <iframe width="419" height="745" src="https://www.youtube.com/embed/8r44cYVxhvY" title="March 10, 2026"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <iframe width="315" height="560" src="https://www.youtube.com/embed/pIL404n9H_g" title="YouTube video player"
+            <!-- <iframe width="315" height="560" src="https://www.youtube.com/embed/pIL404n9H_g" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
@@ -356,7 +365,7 @@
             <iframe width="315" height="560" src="https://www.youtube.com/embed/Ub_EVksPfDk" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+                allowfullscreen></iframe> -->
 
         </div>
 
@@ -414,7 +423,7 @@
                                                                         Shorts
                                                                         Channel</a></p>
                                                             </div> -->
-                    </div>
+                </div>
 
                 <div class="map-container">
                     <iframe width="100%" height="200" style="border:0; border-radius: 10px;" loading="lazy"
@@ -422,12 +431,12 @@
                     </iframe>
                 </div>
             </div>
-            </div>
-            </section>
+        </div>
+        </section>
 
     <a href="https://wa.me/918446004063" class="whatsapp">
         <span style="font-size: 1.2em; margin-right: 5px;">💬</span> Chat on WhatsApp
-        </a>
+    </a>
 
     <footer class="modern-footer">
         <div class="footer-content">
@@ -444,7 +453,8 @@
             </div>
             <div class="footer-legal">
                 <h4>Privacy Policy</h4>
-                <p><a href="privacy.html">View our complete Privacy Policy</a> to understand how we collect, use, and protect your
+                <p><a href="privacy.html">View our complete Privacy Policy</a> to understand how we collect, use, and
+                    protect your
                     personal information.</p>
             </div>
         </div>
@@ -459,18 +469,18 @@
         const navLinks = document.getElementById('nav-links');
         const navItems = document.querySelectorAll('.nav-item');
 
-                hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                    hamburger.classList.toggle('active');
-                });
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
 
-                navItems.forEach(item => {
-                    item.addEventListener('click', () => {
-                        navLinks.classList.remove('active');
-                        hamburger.classList.remove('active');
-                    });
-                });
-            </script>
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 
