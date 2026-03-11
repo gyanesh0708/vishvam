@@ -316,16 +316,47 @@ h2::after {
     justify-content: center;
 }
 
-.gallery img {
-    width: 300px;
-    max-width: 100%;
+.gallery-item {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item img {
+    width: 300px;
+    max-width: 100%;
+    height: 250px;
+        object-fit: cover;
+        display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    }
+    
+    .gallery-item figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 75, 135, 0.95), rgba(0, 75, 135, 0.7), transparent);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        transform: translateY(0);
     transition: transform 0.3s ease;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover figcaption {
+    background: linear-gradient(to top, rgba(0, 75, 135, 0.99), rgba(0, 75, 135, 0.85), rgba(0, 75, 135, 0.6));
 }
 
 .testimonials-container {
@@ -844,5 +875,6 @@ h2::after {
 
     .gallery img {
         width: 100%;
+        height: auto;
     }
 }
